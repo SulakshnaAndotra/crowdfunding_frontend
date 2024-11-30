@@ -15,7 +15,7 @@ import NavBar from "./components/NavBar.jsx";
 const router = createBrowserRouter([
   // These are the three routes!
   {
-    path: "/",
+  
     // Putting our NavBar as the main component will causes the children to render in the <Outlet />
     element: <NavBar />,
     children: [
