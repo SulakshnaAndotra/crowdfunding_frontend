@@ -4,3 +4,132 @@
     column-gap: 10px;
     row-gap: 10px;
   }
+  /* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Baloo 2', cursive;
+  background-color: #E3F2FD;
+  color: #37474F;
+}
+
+#banner {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Optional: Limit height for consistent layout */
+  object-fit: cover; /* Ensures the image covers the width */
+  border-radius: 10px; /* Optional: Rounded corners for aesthetic */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+
+/* Home Page Container */
+#project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto adjust based on screen size */
+  gap: 20px; /* Space between cards */
+  padding: 20px;
+  justify-items: center; /* Center cards within the grid */
+}
+
+/* Individual Project Card Styling */
+.project-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Hover effect for Project Card */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.project-card .card-content {
+  padding: 20px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  color: #37474F;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #37474F;
+  line-height: 1.5;
+}
+
+#contact-section {
+  padding: 30px 20px;
+  background-color: #E3F2FD; /* Warm beige background */
+  text-align: center;
+  color: #37474F; /* Charcoal gray text */
+  border-top: 2px solid #BBDEFB; /* Light blue divider */
+}
+
+#contact-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #FF7043; /* Vibrant coral */
+}
+
+#contact-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#contact-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#contact-section li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #project-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller screens */
+  }
+
+#project-list {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+/* Contact section text adjustments for readability */
+#contact-section h2 {
+  font-size: 20px;
+}
+
+#contact-section p, #contact-section li {
+  font-size: 14px;
+}
+}
+
+@media (max-width: 480px) {
+  #project-list {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  }
+}
+
