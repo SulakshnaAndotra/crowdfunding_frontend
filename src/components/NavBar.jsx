@@ -13,6 +13,11 @@ function NavBar() {
   return (
     <div>
       <nav>
+      <img 
+          src="src\img\logoImg.jpg.png" 
+          alt="logo" 
+          className="logo-image" 
+        />
         <Link to="/">Home</Link>
         {auth.token ? (
             <Link to="/" onClick={handleLogout}>

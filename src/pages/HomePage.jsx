@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { Link, Outlet} from "react-router-dom";
 import useProjects from "../hooks/use-projects";
 import ProjectCard from "../components/ProjectCard";
 import ProjectForm from "../components/ProjectForm.jsx";
 import "./HomePage.css";
+import { useAuth } from "../hooks/use-auth.js";
 
 function HomePage() {
+    const {auth, setAuth} = useAuth();
     const { projects } = useProjects();
     const [openProjectForm, setOpenProjectForm] = useState(false);
 
@@ -25,7 +28,12 @@ function HomePage() {
         <div id= "create-project">
         <p1>"Together for Tiny Miracles: Help Families Give Their Babies the Best Start in Life!"</p1>
         <p2>Every baby deserves a bright start in life, but some families need a helping hand. Join us in creating a community where kindness and generosity come together to support little ones in need. Your contribution can make a world of difference—because every baby is a miracle worth celebrating.</p2>
-        <button onClick={showForm}>Create Project</button>
+        {auth.token ? (
+             <Link to="/projectform">Creat Project</Link>
+            ) : (
+              <Link to="/signup">Creat an account</Link>
+        )}
+
         {openProjectForm && <ProjectForm />}
         </div>
         

@@ -82,10 +82,11 @@ function LoginForm() {
         <button type="submit" onClick={handleSubmit}>
             Login
         </button>
+        <Link to="/signup">Creat an account</Link>
       
 
       </form>
-      <Link to="/signup">Creat an account</Link>
+      
             
         
      

@@ -56,28 +56,32 @@ form button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #4CAF50; /* Green button */
+  background-color: #FFC107; /* Green button */
   color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-  background-color: #45A049; /* Slightly darker green on hover */
+  background-color: #FFC107; /* Slightly darker green on hover */
 }
 
 form button:active {
   transform: scale(0.98); /* Slight press-down effect */
 }
 
-/* Alternate button styles for "Create an account" */
-form button:last-of-type {
-  background-color: #FFC107; /* Yellow button for "Create an account" */
-  color: #333333; /* Dark text for contrast */
+#create-account a {
+  background-color: #FFC107; 
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
-form button:last-of-type:hover {
-  background-color: #FFB300; /* Slightly darker yellow on hover */
+#create-account a:hover {
+  background-color: #FFC107; 
 }
+
 
 /* Heading or additional text */
 form h2 {
