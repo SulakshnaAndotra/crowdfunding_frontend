@@ -11,6 +11,11 @@ import LoginPage from "./pages/LoginPage.jsx";
 // Here we import our components
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
+import SignupForm from "./components/SignUp.jsx";
+import ProjectForm from "./components/ProjectForm.jsx";
+import SignupPage from "./pages/Signuppage.jsx";
+
+
 
 // Here we create our router and tell it whats pages to render at what path
 const router = createBrowserRouter([
@@ -25,6 +30,9 @@ const router = createBrowserRouter([
         { path: "/about", element: <AboutPage /> },
         { path: "/contact", element: <ContactPage /> },
         { path: "/project/:id", element: <ProjectPage /> },
+        { path: "/signin", element: <SignupForm /> },
+        { path: "/signup", element:  <SignupPage /> },
+        
     ],
 },
 ]);

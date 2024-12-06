@@ -2,17 +2,19 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import z from "zod";
 import postSignup from "../api/post-signup.js";
-import postLogin from "../api/post-login.js";
-import useAuth from "../hooks/use-auth.js";
+import { useAuth } from  "../hooks/use-auth.js";
 
 const loginSchema = z.object({
     username: z.string().min(1, { message: "Username must not be empty" }),
     password: z
       .string()
       .min(8, { message: "Password must be at least 8 characters long" }),
+      firstname: z.string().min(1, { message: "firstname must not be empty" }),
+      lastname: z.string().min(1, { message: "lastname must not be empty" }),
+      email: z.string().min(1, { message: "email must not be empty" }),
   });
 
-function LoginForm() {
+function SignupForm() {
     const navigate = useNavigate();
     const {auth, setAuth} = useAuth();
 
@@ -34,23 +36,16 @@ function LoginForm() {
         });
       };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const result = loginSchema.safeParse(credentials);
-        if (!result.success) {
-          const error = result.error.errors?.[0];
-          if (error) {
-            alert(error.message);
-          }
-          return;
-        } else {
-          postLogin(result.data.username, result.data.password).then((response) => {
-            window.localStorage.setItem("token", response.token);
-            setAuth({
-                   token: response.token,
-                   });
-            navigate("/");
-          });
+        try {
+          const response = await postSignup(username, password, firstname, lastname, email);
+          console.log("Signup successful", response);
+          // Handle successful signup (e.g., redirect to login page)
+        } catch (error) {
+          console.error("Signup failed", error);
+          alert(error.message); // Show error message to the user
         }
       };
     
@@ -108,4 +103,4 @@ function LoginForm() {
     );
   }
   
-  export default LoginForm;
+  export default SignupForm;

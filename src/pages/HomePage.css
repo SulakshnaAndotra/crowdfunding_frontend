@@ -32,6 +32,50 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
 }
 
+#create-project {
+  background-color: #E3F2FD; 
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+}
+
+/* Styling for the headline (p1) */
+#create-project p1 {
+  display: block; /* Ensure it's treated as a block-level element */
+  font-size: 24px;
+  font-weight: bold;
+  color: #37474F; /* Deep pink for emphasis */
+  margin-bottom: 15px;
+}
+
+/* Styling for the descriptive text (p2) */
+#create-project p2 {
+  display: block; /* Ensure it's treated as a block-level element */
+  font-size: 16px;
+  color: #37474F; /* Neutral dark grey for readability */
+  margin-bottom: 20px;
+  line-height: 1.6; /* Better text spacing */
+}
+
+/* Styling for the button */
+#create-project button {
+  background-color: #4CAF50; 
+  color: #FFFFFF; /* White text for contrast */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+
+
 
 /* Home Page Container */
 #project-list {
@@ -89,7 +133,7 @@ body {
   color: #FF7043; /* Vibrant coral */
 }
 
-#contact-section p {
+#contact-section p2 {
   font-size: 18px;
   margin-bottom: 20px;
 }
@@ -106,7 +150,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  #project-list {
+#project-list {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller screens */
   }
 

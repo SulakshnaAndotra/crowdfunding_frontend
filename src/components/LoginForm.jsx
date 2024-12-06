@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import z from "zod";
 import postLogin from "../api/post-login.js";
+import postSignup from "../api/post-signup.js";
 import { useAuth } from "../hooks/use-auth.js";
+import SignupForm from "./SignUp.jsx";
 
 const loginSchema = z.object({
     username: z.string().min(1, { message: "Username must not be empty" }),
@@ -10,6 +13,7 @@ const loginSchema = z.object({
       .string()
       .min(8, { message: "Password must be at least 8 characters long" }),
   });
+
 
 function LoginForm() {
     const navigate = useNavigate();
@@ -19,6 +23,9 @@ function LoginForm() {
         username: "",
         password: "",
     });
+    const [openSignupForm, setOpenSignupForm] = useState(false);
+
+
 
     const handleChange = (event) => {
         const { id, value } = event.target;
@@ -51,6 +58,7 @@ function LoginForm() {
       };
     
     return (
+      <>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -74,10 +82,14 @@ function LoginForm() {
         <button type="submit" onClick={handleSubmit}>
             Login
         </button>
-        <button onClick={handleSubmit}>
-            Creat an account
-        </button>
+      
+
       </form>
+      <Link to="/signup">Creat an account</Link>
+            
+        
+     
+      </>
     );
   }
   
