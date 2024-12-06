@@ -6,6 +6,7 @@ import ProjectForm from "../components/ProjectForm.jsx";
 import "./HomePage.css";
 import { useAuth } from "../hooks/use-auth.js";
 
+
 function HomePage() {
     const {auth, setAuth} = useAuth();
     const { projects } = useProjects();
@@ -16,15 +17,29 @@ function HomePage() {
     }
     return (
       <>
-     <div>
-      <div id="banner">
-        <img 
-          src="src/img/banner-image.jpg.webp" 
-          alt="Banner" 
-          className="banner-image" 
-        />
+    <div>
+    <div className="banner">
+        <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="banner-video"
+        >
+            <source src="src/img/banner.mp4" type="video/mp4" />
+            <source src="/path-to-your-video.webm" type="video/webm" />
+            {/* Fallback for older browsers */}
+            Your browser does not support the video tag.
+            <img src="src/img/fallback.jpg" alt="Banner Fallback" />
+        </video>
+      {/* Overlay Content */}
+      <div className="banner-content">
+        <h1>Welcome to CradleConnect</h1>
+        <p>Supporting families and celebrating tiny miracles!</p>
       </div>
-      <div>
+    </div>
+
+      <div className="main-content">
         <div id= "create-project">
         <p1>"Together for Tiny Miracles: Help Families Give Their Babies the Best Start in Life!"</p1>
         <p2>Every baby deserves a bright start in life, but some families need a helping hand. Join us in creating a community where kindness and generosity come together to support little ones in need. Your contribution can make a world of difference—because every baby is a miracle worth celebrating.</p2>

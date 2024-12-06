@@ -18,19 +18,46 @@ body {
   color: #37474F;
 }
 
-#banner {
-  text-align: center;
-  margin: 20px 0;
+/* Banner Styling */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjust height as needed */
+  
 }
 
-.banner-image {
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  height: auto;
-  max-height: 400px; /* Optional: Limit height for consistent layout */
-  object-fit: cover; /* Ensures the image covers the width */
-  border-radius: 10px; /* Optional: Rounded corners for aesthetic */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  height: 100%;
+  object-fit: cover; /* Ensures video fills the container without distortion */
+  z-index: 1;
 }
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Content above video */
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner-content h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
 
 #create-project {
   background-color: #E3F2FD; 
