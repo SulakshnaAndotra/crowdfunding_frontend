@@ -1,6 +1,19 @@
-async function postProject() {
+async function postProject(tittle, description, goal, image, active) {
     const url = `${import.meta.env.VITE_API_URL}/projects`;
-    const response = await fetch(url, { method: "Post" });
+  
+    const response = await fetch(url, {
+      method: "POST", // We need to tell the server that we are sending JSON data so we set the Content-Type header to application/json
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "tittle": tittle,
+        "description": descrition,
+        "goal": goal,
+        "image": image,
+        "active" : active,
+      }),
+    });
   
     if (!response.ok) {
       const fallbackError = `Error make a project`;

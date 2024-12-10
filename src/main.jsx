@@ -15,6 +15,8 @@ import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import SignupForm from "./components/SignUp.jsx";
 import ProjectForm from "./components/ProjectForm.jsx";
+import ProjectCard from "./components/ProjectCard.jsx";
+
 
 
 
@@ -35,7 +37,9 @@ const router = createBrowserRouter([
         { path: "/signin", element: <SignupForm /> },
         { path: "/signup", element:  <SignupPage /> },
         { path: "/projectform", element: <CreateProjectPage/>},
+        { path: "/project/:id", element: <ProjectPage />},
 
+ 
         
     ],
 },

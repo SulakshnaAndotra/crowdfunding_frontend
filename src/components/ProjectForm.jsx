@@ -16,11 +16,11 @@ function projectform() {
     const {auth, setAuth} = useAuth();
 
     const [credentials, setCredentials] = useState({
-        Tittle: "",
-        Description: "",
-        Goal: "",
-        Image:"",
-        Active:"",
+        tittle: "",
+        description: "",
+        goal: "",
+        image:"",
+        active:"",
     });
 
     const handleChange = (event) => {
@@ -56,7 +56,7 @@ function projectform() {
     return (
     <form onSubmit={handleSubmit}>
         <div>
-        <label htmlFor="Tittle">Tittle:</label>
+        <label htmlFor="tittle">Tittle:</label>
         <input
                 type="text"
                 id="tittle"
@@ -74,10 +74,10 @@ function projectform() {
             />
         </div>
         <div>
-        <label htmlFor="Goal">Goal:</label>
+        <label htmlFor="goal">Goal:</label>
         <input
                 type= "number"
-                id="Goal"
+                id="goal"
                 placeholder="Enter the Goal Amountr in $"
                 onChange={handleChange}
             />
@@ -85,7 +85,7 @@ function projectform() {
         <div>
         <label htmlFor="image">image:</label>
         <input
-                type= "image"
+                type= "url"
                 id="image"
                 placeholder="upload the image"
                 onChange={handleChange}
