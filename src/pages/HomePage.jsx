@@ -6,6 +6,7 @@ import ProjectForm from "../components/ProjectForm.jsx";
 import "./HomePage.css";
 import { useAuth } from "../hooks/use-auth.js";
 
+import Video from "../img/banner.mp4"
 
 function HomePage() {
     const {auth, setAuth} = useAuth();
@@ -26,8 +27,8 @@ function HomePage() {
             playsInline
             className="banner-video"
         >
-            <source src="src/img/banner.mp4" type="video/mp4" />
-            <source src="/path-to-your-video.webm" type="video/webm" />
+            <source src={Video} type="video/mp4" />
+          
             {/* Fallback for older browsers */}
             Your browser does not support the video tag.
             <img src="src/img/fallback.jpg" alt="Banner Fallback" />
