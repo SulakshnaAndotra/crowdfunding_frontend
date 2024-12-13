@@ -6,23 +6,32 @@ import postProject from "/src/api/post-project.js";
 import z from "zod";
 
 const projectformSchema = z.object({
-    Tittle: z.string().min(1, { message: "Tittle must not be empty" }),
-    Description: z.string().min(8, { message: "Description must not be empty" }),
-    Goal: z.string().min(1, { message: "Goal must not be empty" }),
-    Image: z.string().min(1, { message: "Image must not be empty" }),
+    title: z.string().min(1, { message: "Title must not be empty" }),
+    description: z.string().min(8, { message: "Description must not be empty" }),
+    goal: z.string().min(1, { message: "Goal must not be empty" }),
+    image: z.string().min(1, { message: "Image must not be empty" }),
   });
 function projectform() {
     const navigate = useNavigate();
     const {auth, setAuth} = useAuth();
 
     const [credentials, setCredentials] = useState({
-        tittle: "",
+        title: "",
         description: "",
         goal: "",
         image:"",
-        active:"",
+        active: false,
     });
+    console.log(credentials)
 
+    const handleCheckboxChange = (event) => {
+      setCredentials((prevCredentials) => {
+        return  {
+          ...prevCredentials,
+          active: event.target.checked}
+      });
+    };
+ 
     const handleChange = (event) => {
         const { id, value } = event.target;
         setCredentials((prevCredentials) => {
@@ -36,6 +45,7 @@ function projectform() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const result = projectformSchema.safeParse(credentials);
+        console.log(result)
         if (!result.success) {
           const error = result.error.errors?.[0];
           if (error) {
@@ -43,7 +53,7 @@ function projectform() {
           }
           return;
         } else {
-          postLogin(result.data.Tittle, result.data.Description, result.data.Goal,result.data.Image,).then((response) => {
+          postProject(result.data.title, result.data.description, result.data.goal,result.data.image,).then((response) => {
             window.localStorage.setItem("token", response.token);
             setAuth({
                    token: response.token,
@@ -56,18 +66,18 @@ function projectform() {
     return (
     <form onSubmit={handleSubmit}>
         <div>
-        <label htmlFor="tittle">Tittle:</label>
+        <label htmlFor="title">Title:</label>
         <input
                 type="text"
-                id="tittle"
-                placeholder="Enter the tittle"
+                id="title"
+                placeholder="Enter the title"
                 onChange={handleChange}
             />
         </div>
         <div>
-        <label htmlFor="Descritpion">Description:</label>
+        <label htmlFor="description">Description:</label>
         <input
-                type="description"
+                type="text"
                 id="description"
                 placeholder="Enter the full description"
                 onChange={handleChange}
@@ -95,12 +105,13 @@ function projectform() {
         <label htmlFor="active">Active:</label>
         <input
                 type= "checkbox"
+                checked={credentials.active}
                 id="active"
                 placeholder=""
-                onChange={handleChange}
+                onChange={handleCheckboxChange}
             />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit">
             Creat Project
         </button>
     </form>

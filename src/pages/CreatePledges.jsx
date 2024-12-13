@@ -6,4 +6,4 @@ function CreatePledgePage() {
 
   }
   
-  export default CreatePledge;
+  export default CreatePledgePage;

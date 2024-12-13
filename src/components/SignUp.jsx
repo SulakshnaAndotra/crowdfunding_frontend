@@ -12,7 +12,7 @@ const signupSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
 });
 
-function SignupForm() {
+function signupForm() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
 
@@ -23,7 +23,7 @@ function SignupForm() {
     lastname: "",
     email: "",
   });
-  const [profileImage, setProfileImage] = useState(null);
+
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -33,40 +33,26 @@ function SignupForm() {
     }));
   };
 
-  const handleFileChange = (event) => {
-    setProfileImage(event.target.files[0]);
-  };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const result = signupSchema.safeParse(credentials);
 
     if (!result.success) {
-      alert(result.error.errors[0]?.message || "Invalid input");
-      return;
-    }
-
-    try {
-      // Create FormData object for sending file and text data
-      const formData = await new FormData();
-      formData.append("username", credentials.username);
-      formData.append("password", credentials.password);
-      formData.append("firstname", credentials.firstname);
-      formData.append("lastname", credentials.lastname);
-      formData.append("email", credentials.email);
-
-      if (profileImage) {
-        formData.append("profile_image", profileImage); // "profile_image" is the backend field name
+      const error = result.error.errors?.[0];
+      if (error) {
+        alert(error.message);
       }
-
-      // Call API function
-      const response = await postSignup(formData);
-      console.log("Signup successful:", response);
-
-      navigate("/login");
-    } catch (error) {
-      console.error("Signup failed:", error);
-      // alert(error.message);
+      return;
+    } else {
+      postProject(result.data.username, result.data.password, result.data.firstname,result.data.lastname,result.data.email,).then((response) => {
+        window.localStorage.setItem("token", response.token);
+        setAuth({
+               token: response.token,
+               });
+        navigate("/login");
+      });
     }
   };
 
@@ -92,13 +78,9 @@ function SignupForm() {
         <label htmlFor="email">Email:</label>
         <input type="email" id="email" placeholder="Enter your email address" onChange={handleChange} />
       </div>
-      <div>
-        <label htmlFor="profileImage">Profile Picture:</label>
-        <input type="file" id="profileImage" onChange={handleFileChange} />
-      </div>
       <button type="submit">Signup</button>
     </form>
   );
 }
 
-export default SignupForm;
+export default signupForm;
