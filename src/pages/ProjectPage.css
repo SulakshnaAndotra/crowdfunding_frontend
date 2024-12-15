@@ -9,7 +9,7 @@
   .project-page {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px;
     font-family: 'Baloo 2', cursive;
     color: #37474F;
@@ -61,6 +61,24 @@
   .project-page ul li span {
     font-weight: bold;
     color: #2E7D32; /* Green to emphasize supporter name */
+  }
+  .project-page a {
+    background-color: #FFC107; 
+    margin-left: 500px;
+    margin-right: 500px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+  }
+  
+  .project-page a:hover {
+    background-color: #FFC107; 
   }
   
   /* Media Queries */

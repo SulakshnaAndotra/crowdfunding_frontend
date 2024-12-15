@@ -1,0 +1,111 @@
+/* General Styling */
+.contact-page {
+    font-family: 'Baloo 2', cursive;
+    color: #37474F;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+    background-color: #F5F5F5;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  .contact-header {
+    margin-bottom: 30px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.5rem;
+    color: #FF7043;
+    margin-bottom: 10px;
+  }
+  
+  .contact-header p {
+    font-size: 1.2rem;
+    color: #607D8B;
+  }
+  
+  /* Contact Details Section */
+  .contact-details {
+    margin-bottom: 30px;
+  }
+  
+  .contact-details h2 {
+    font-size: 2rem;
+    color: #FF7043;
+    margin-bottom: 10px;
+  }
+  
+  .contact-details p {
+    font-size: 1.2rem;
+    color: #455A64;
+  }
+  
+  /* Feedback Form Section */
+  .feedback-form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .feedback-form h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+  }
+  
+  .submit-button {
+    background-color: #FFC107;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #FFA000;
+    transform: scale(1.05);
+  }
+  
+  .thank-you-message {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .thank-you-message h3 {
+    font-size: 2rem;
+    color: #4CAF50;
+  }
+  

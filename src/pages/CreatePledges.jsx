@@ -1,8 +1,9 @@
-import PledgesForm from "../components/PledgesForm.jsx";
+import CreatepledgeForm from "../components/PledgeForm.jsx";
+import "./CreatePledges.css";
 
 function CreatePledgePage() {
 
-    return <PledgeForm />;
+    return <CreatepledgeForm />;
 
   }
   

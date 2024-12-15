@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "../hooks/use-auth.js";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import z from "zod";
 import postPledge from "/src/api/post-pledge.js";
 
+
 const pledgeformSchema = z.object({
-    Amount: z.string().min(1, { message: "Amount must not be empty" }),
+   
   });
 function pledgeform() {
     const navigate = useNavigate();
@@ -15,8 +16,10 @@ function pledgeform() {
         amount: "",
         Comment: "",
         anonymous: false,
+        supporter: "",
     });
-    console.log(credentials)
+    const { id } = useParams();
+  
 
     const handleCheckboxChange = (event) => {
       setCredentials((prevCredentials) => {
@@ -46,7 +49,7 @@ function pledgeform() {
           }
           return;
         } else {
-          postPledge(result.data.amount, result.data.Comment, result.data.anonymous,).then((response) => {
+          postPledge(result.data.amount, result.data.Comment, result.data.anonymous, id, result.data.supporter).then((response) => {
             window.localStorage.setItem("token", response.token);
             setAuth({
                    token: response.token,
@@ -57,38 +60,42 @@ function pledgeform() {
       };
 
     return (
-    <form onSubmit={handleSubmit}>
-        <div>
-        <label htmlFor="amount">Amount:</label>
-        <input
-                type="number"
-                id="amount"
-                placeholder="Enter the amount in $"
-                onChange={handleChange}
-            />
-        </div>
-        <div>
-        <label htmlFor="comment">Comment:</label>
-        <input
-                type="text"
-                id="comment"
-                placeholder="Enter your comment"
-                onChange={handleChange}
-            />
-        </div>
-        <div>
-        <label htmlFor="anonymous">Active:</label>
-        <input
-                type= "checkbox"
-                id="anonymous"
-                placeholder=""
-                onChange={handleChange}
-            />
-        </div>
-        <button type="submit" onClick={handleSubmit}>
-            Submit
-        </button>
-    </form>
+    <div className="Pledge-form">
+      <form onSubmit={handleSubmit}>
+          <div>
+          <label htmlFor="amount">Amount:</label>
+          <input
+                  type="number"
+                  id="amount"
+                  placeholder="Enter the amount in $"
+                  onChange={handleChange}
+                  required
+              />
+          </div>
+          <div>
+          <label htmlFor="comment">Comment:</label>
+          <input
+                  type="text"
+                  id="comment"
+                  placeholder="Enter your comment"
+                  onChange={handleChange}
+                  required
+              />
+          </div>
+          <div>
+          <label htmlFor="anonymous">Active:</label>
+          <input
+                  type= "checkbox"
+                  id="anonymous"
+                  placeholder=""
+                  onChange={handleChange}
+              />
+          </div>
+          <button type="submit" onClick={handleSubmit}>
+              Submit
+          </button>
+      </form>
+    </div>
     );
 
 
@@ -100,4 +107,4 @@ function pledgeform() {
 }
 
 
-export default projectform;
+export default pledgeform;

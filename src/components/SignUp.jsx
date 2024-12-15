@@ -12,7 +12,7 @@ const signupSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
 });
 
-function signupForm() {
+function SignupForm() {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
 
@@ -46,7 +46,7 @@ function signupForm() {
       }
       return;
     } else {
-      postProject(result.data.username, result.data.password, result.data.firstname,result.data.lastname,result.data.email,).then((response) => {
+      postSignup(result.data.username, result.data.password, result.data.firstname,result.data.lastname,result.data.email,).then((response) => {
         window.localStorage.setItem("token", response.token);
         setAuth({
                token: response.token,
@@ -57,30 +57,33 @@ function signupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter username" onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" placeholder="Password" onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="firstname">First Name:</label>
-        <input type="text" id="firstname" placeholder="Enter your first name" onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="lastname">Last Name:</label>
-        <input type="text" id="lastname" placeholder="Enter your last name" onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter your email address" onChange={handleChange} />
-      </div>
-      <button type="submit">Signup</button>
-    </form>
+
+    <div className="Signup-form">
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter username" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" placeholder="Password" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="firstname">First Name:</label>
+          <input type="text" id="firstname" placeholder="Enter your first name" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="lastname">Last Name:</label>
+          <input type="text" id="lastname" placeholder="Enter your last name" onChange={handleChange} />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter your email address" onChange={handleChange} />
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   );
 }
 
-export default signupForm;
+export default SignupForm;

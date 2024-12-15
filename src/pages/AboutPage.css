@@ -1,0 +1,49 @@
+/* General Styling */
+.about-page {
+    font-family: 'Baloo 2', cursive;
+    color: #37474F;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center;
+    background-color: #F5F5F5; /* Light background */
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background-color: #E3F2FD; /* Light blue background */
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: #607D8B;
+  }
+  
+  /* Section Styling */
+  .mission-section, .impact-section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #FF7043; /* Green for emphasis */
+    margin-bottom: 10px;
+  }
+  
+  .section-content {
+    font-size: 1.2rem;
+    color: #455A64; /* Subtle gray-blue text */
+  }
+  
+  
+  
+  

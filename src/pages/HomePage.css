@@ -14,7 +14,8 @@
 /* Body */
 body {
   font-family: 'Baloo 2', cursive;
-  background-color: #E3F2FD;
+  /* background-color: #E3F2FD; */
+  background-color: white;
   color: #37474F;
 }
 
@@ -45,6 +46,7 @@ body {
   z-index: 2; /* Content above video */
   text-align: center;
   color: #ffffff;
+  
 }
 
 .banner-content h1 {
@@ -55,6 +57,7 @@ body {
 .banner-content p {
   font-size: 1.2rem;
   margin: 10px 0;
+ 
 }
 
 
@@ -101,10 +104,6 @@ body {
 }
 
 
-
-
-
-/* Button hover effect */
 
 
 

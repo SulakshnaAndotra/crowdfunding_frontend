@@ -1,0 +1,120 @@
+/* General styling for the Login Page */
+.CreateProject {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+    background-color: #E3F2FD;
+    color: #37474F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  
+  /* Centered container for the login form */
+  form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Input fields */
+  form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  form input:focus {
+    border-color: #4CAF50; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow */
+    outline: none;
+  }
+  
+  /* Labels */
+  form label {
+    font-size: 14px;
+    color: #333333; /* Dark gray for text */
+    margin-bottom: 5px;
+  }
+  
+  /* Buttons */
+  form button {
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Baloo 2', cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #FFC107; /* Green button */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  form button:hover {
+    background-color: #FFC107; /* Slightly darker green on hover */
+  }
+  
+  form button:active {
+    transform: scale(0.98); /* Slight press-down effect */
+  }
+  
+  
+  .CreateProject a {
+    background-color: #FFC107; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+  }
+  
+  .CreateProject a:hover {
+    background-color: #FFC107; 
+  }
+  
+  
+  /* Heading or additional text */
+  form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+  }
+  
+  form p {
+    text-align: center;
+    font-size: 14px;
+    color: #666666;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    form {
+      padding: 20px;
+      gap: 10px;
+    }
+  
+    form h2 {
+      font-size: 20px;
+    }
+  
+    form button, form input {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  

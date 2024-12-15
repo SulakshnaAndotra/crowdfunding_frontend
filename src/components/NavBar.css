@@ -12,7 +12,7 @@
   nav {
     background-color: #E3F2FD;
     font-display: #caffbf;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Baloo 2', cursive; /* Apply the Baloo font for a playful look *
     padding: 10px 20px; /* Vertical and horizontal padding */
     display: flex;
@@ -21,12 +21,16 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Logo or brand name (Optional if you want to add it) */
   .logo-container {
     display: flex;
     align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
   .logo-image {
@@ -35,6 +39,8 @@
     border-radius: 5px;
     object-fit: contain; /* Ensures the image doesn't stretch */
     max-width: 100px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
  

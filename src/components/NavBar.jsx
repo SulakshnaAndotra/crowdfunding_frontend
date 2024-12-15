@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import "./NavBar.css";
 import { useAuth } from "../hooks/use-auth.js";
+import Image from "../img/LogoImg.jpg.png";
 
 function NavBar() {
     const {auth, setAuth} = useAuth();
@@ -14,20 +15,20 @@ function NavBar() {
     <div>
       <nav>
       <img 
-          src="src\img\logoImg.jpg.png" 
+          src={Image}
           alt="logo" 
           className="logo-image" 
         />
-        <Link to="/">Home</Link>
+        <Link to="/">HOME</Link>
         {auth.token ? (
             <Link to="/" onClick={handleLogout}>
-                Log Out
+                LOGOUT
             </Link>
             ) : (
-            <Link to="/login">Login</Link>
+            <Link to="/login">LOGIN</Link>
         )}
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/about">ABOUT</Link>
+        <Link to="/contact">CONTACT</Link>
       </nav>
       {/* React Router will pass components into the <Outlet /> based on the path */}
       <Outlet />

@@ -1,5 +1,5 @@
 /* General styling for the Login Page */
-.Login-page {
+.Login-form {
   margin: 0;
   padding: 0;
   font-family: 'Baloo 2', cursive;
@@ -10,6 +10,7 @@
   align-items: center;
   height: 100vh; /* Full viewport height */
 }
+
 
 /* Centered container for the login form */
 form {
@@ -22,6 +23,8 @@ form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* Input fields */
@@ -56,8 +59,8 @@ form button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: underline;
   background-color: #FFC107; /* Green button */
-  color: white;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -69,7 +72,8 @@ form button:active {
   transform: scale(0.98); /* Slight press-down effect */
 }
 
-#create-account a {
+
+.Login-form a {
   background-color: #FFC107; 
   padding: 10px 20px;
   border-radius: 5px;
@@ -78,7 +82,7 @@ form button:active {
   display: inline-block;
 }
 
-#create-account a:hover {
+.Login-form a:hover {
   background-color: #FFC107; 
 }
 

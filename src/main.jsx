@@ -9,6 +9,7 @@ import ContactPage from "./pages/ContactPage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateProjectPage from "./pages/CreateProjectPage.jsx";
+import CreatePledgePage from "./pages/CreatePledges.jsx";
 import SignupPage from "./pages/Signuppage.jsx";
 // Here we import our components
 import NavBar from "./components/NavBar.jsx";
@@ -16,6 +17,7 @@ import { AuthProvider } from "./components/AuthProvider.jsx";
 import SignupForm from "./components/SignUp.jsx";
 import ProjectForm from "./components/ProjectForm.jsx";
 import ProjectCard from "./components/ProjectCard.jsx";
+import PledgeForm from "./components/PledgeForm.jsx";
 
 
 
@@ -38,6 +40,7 @@ const router = createBrowserRouter([
         { path: "/signup", element:  <SignupPage /> },
         { path: "/projectform", element: <CreateProjectPage/>},
         { path: "/project/:id", element: <ProjectPage />},
+        { path: "/project/:id/pledge", element: <CreatePledgePage />},
 
  
         
